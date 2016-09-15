@@ -35,7 +35,7 @@ public class LocationHandler extends Observable implements LocationListener {
 
         // Attempt to give the app some initial data (seems to only work sometimes)
         Location loc = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
-        pushChange(loc);
+        if (loc != null) pushChange(loc);
     }
 
     public void pushChange(Location loc) {
